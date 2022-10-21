@@ -2,16 +2,6 @@ a = int(input("Enter \"a\" value: "))
 b = int(input("Enter \"b\" value: "))
 c = int(input("Enter \"c\" value: "))
 
-print("\nYou got expression ")
-if b < 0 and c < 0:
-    print(str(a) + "x^2 - " + str(-b) + "x - " + str(-c) + " = 0")
-elif b < 0:
-    print(str(a) + "x^2 - " + str(-b) + "x + " + str(c) + " = 0")
-elif c < 0:
-    print(str(a) + "x^2 + " + str(b) + "x - " + str(-c) + " = 0")
-else:
-    print(str(a) + "x^2 + " + str(b) + "x + " + str(c) + " = 0")
-
 discriminant = b ** 2 - (4 * a * c)
 
 if discriminant > 0:
