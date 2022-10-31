@@ -1,28 +1,11 @@
 userString = input("Enter some text: ")
 
-letterAmount = {}
+letterAmount = dict.fromkeys(set(userString), 0)
 
-# Entering data to the dictionary
 for letter in userString:
-    if letter not in letterAmount.keys():
-        letterAmount[letter] = 1
-    else:
+    if letter in letterAmount.keys():
         letterAmount[letter] += 1
 
-# Output results of entering data
-for key in letterAmount.keys():
-    print("\t" + str(key) + ": " + str(letterAmount[key]))
-
-# Dictionary with values sorted by keys (letters)
-letterAmountSortedByLetters = dict(sorted(letterAmount.items(), key=lambda x: x[0]))
-
-print("\nLetters amount sorted by letters: ")
-for key in letterAmountSortedByLetters.keys():
-    print("\t" + str(key) + ": " + str(letterAmountSortedByLetters[key]))
-
-# Dictionary with values sorted by values (amounts of letters)
-letterAmountSortedByNumbers = dict(sorted(letterAmount.items(), key=lambda x: x[1]))
-
-print("\nLetters amount sorted by numbers: ")
-for key in letterAmountSortedByNumbers.keys():
-    print("\t" + str(key) + ": " + str(letterAmountSortedByNumbers[key]))
+print("Amount of every letter in your string: " + str(letterAmount))
+print("Letters amount sorted by letters: " + str(dict(sorted(letterAmount.items(), key=lambda x: x[0]))))
+print("Letters amount sorted by numbers: " + str(dict(sorted(letterAmount.items(), key=lambda x: x[1]))))
