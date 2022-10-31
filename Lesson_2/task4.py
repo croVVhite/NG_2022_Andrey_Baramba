@@ -1,4 +1,4 @@
-number = int(input())
+number = int(input("Enter the number whose factorial you want to get: "))
 
 factorial = 1
 
