@@ -1,15 +1,15 @@
 seconds = int(input("Enter number of seconds: "))
 
-buf1 = seconds % 86400
-days = int((seconds - buf1) / 86400)
-seconds = buf1
+excessiveSecondsInDays = seconds % 86400
+days = int((seconds - excessiveSecondsInDays) / 86400)
+seconds = excessiveSecondsInDays
 
-buf2 = seconds % 3600
-hours = int((seconds - buf2) / 3600)
-seconds = buf2
+excessiveSecondsInHours = seconds % 3600
+hours = int((seconds - excessiveSecondsInHours) / 3600)
+seconds = excessiveSecondsInHours
 
-buf3 = seconds % 60
-minutes = int((seconds - buf3) / 60)
-seconds = buf3
+excessiveSecondsInMinutes = seconds % 60
+minutes = int((seconds - excessiveSecondsInMinutes) / 60)
+seconds = excessiveSecondsInMinutes
 
 print("{0} Days {1:02d}:{2:02d}:{3:02d}".format(days, hours, minutes, seconds))
